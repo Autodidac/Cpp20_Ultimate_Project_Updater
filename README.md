@@ -26,7 +26,29 @@ When executed, the updater will:
 - ✅ **Build the updater if needed**  
 - ✅ **Ensure that all required dependencies are available** before executing the main program  
 
-Everything happens **automatically**, with no manual intervention required.
+⚠️ **Users must accept the installers during installation to enable these features.**  
+Otherwise, the updater will not be able to install dependencies such as LLVM, Clang, or 7-Zip.
+
+---
+
+## 💾 Storage Requirements
+
+### **🔹 Why You Need 6GB of Free Space**
+Before running the updater, ensure you have **at least 6GB of free disk space** available.
+
+- **LLVM source code and/or installer** alone can take up **~2GB**.
+- **Total disk usage for this project** (including builds, tools, and dependencies) can be **up to 6GB or more**.
+- **This does not include any additional storage required by your own project.**
+
+### **🔹 Temporary Storage & Automatic Cleanup**
+💡 **Most or all of the build files and installations are automatically removed after use.**  
+- **The updater detects already installed dependencies** and skips unnecessary downloads.  
+- **If a dependency is installed, it will NOT download or build it again.**  
+- **Any temporary build files, installers, and extracted archives are deleted immediately after updating or building.**  
+- **The full 6GB is only needed while the updater is running** and **only if you don't already have the dependencies installed.**  
+- **Once installation is complete, disk usage will return to normal. If and only if it was ever used at all, in the event binar exe's aren't available in the download. It's a very good triple-tupled redundant system for this type of repo updater specifically.**  
+
+⚠️ **Make sure you have enough disk space available before running the updater!**  
 
 ---
 
