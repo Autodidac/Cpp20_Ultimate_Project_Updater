@@ -37,6 +37,7 @@ x64/*
 out/
 build_clang/
 built/
+build/
 build_gcc/
 vcpkg_installed/
 bin/*
