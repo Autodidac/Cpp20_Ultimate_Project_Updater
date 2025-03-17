@@ -43,17 +43,11 @@ vcpkg_installed/
 bin/*
 .vs/
 backup/
-app1/x64/
-Application1/x64/
-StaticLib1/x64/
+app1/
 
-app1/Debug
-Application1/Debug
-StaticLib1/Debug
+updater.exe
+*.ninja_log
 
-app1/Release
-Application1/Release
-StaticLib1/Release
 
 *.pdb
 *.idb

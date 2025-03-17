@@ -1,130 +1,49 @@
 # Cpp_Ultimate_Project_Updater
 
-## ⚠️ IMPORTANT WARNING
+# ⚠️ IMPORTANT WARNING
 
 🚨 **Always run the updater in its own directory!** 🚨  
 The updater **creates and modifies files in the directory where it runs**.  
 Running it inside an existing project folder **may overwrite files**.  
-**Recommended:** **Create a new directory where you want the updater to manage files.**  
+**Recommended:** **Create a new directory where you want the updater to manage files.**
 
 ---
 
-## 🌟 About
+# C++ Ultimate Project Updater
 
-C++ Ultimate Project Updater is a **fully automated, centralized, self-updating entry point** for projects.  
+A **fully automated, centralized, self-updating entry point** for projects.  
+This updater **requires no manual cloning or forking**—it will **automatically download, update, and manage project files** while keeping itself updated.  
 
-🚀 **Instead of downloading a binary, fork this repository to create your own updater instance!**  
-This prevents hitting **GitHub rate limits** since each user has their own repository.
-
-### **🔹 What Does This Updater Do?**
-When executed, the updater will:
-- ✅ **Automatically download and install dependencies**, including:
-  - **LLVM+Clang (standalone binary or built from source)**
-  - **7-Zip**
-  - **Ninja (build system)**
-- ✅ **Download & update the updater source and compiled binaries**  
-- ✅ **Build the updater if needed**  
-- ✅ **Ensure that all required dependencies are available** before executing the main program  
-
-⚠️ **Users must accept the installers during installation to enable these features.**  
-Otherwise, the updater will not be able to install dependencies such as LLVM, Clang, or 7-Zip.
-
----
-
-## 💾 Storage Requirements
-
-### **🔹 Why You Need 6GB of Free Space**
-Before running the updater, ensure you have **at least 6GB of free disk space** available.
-
-- **LLVM source code and/or installer** alone can take up **~2GB**.
-- **Total disk usage for this project** (including builds, tools, and dependencies) can be **up to 6GB or more**.
-- **This does not include any additional storage required by your own project.**
-
-### **🔹 Temporary Storage & Automatic Cleanup**
-💡 **Most or all of the build files and installations are automatically removed after use.**  
-- **The updater detects already installed dependencies** and skips unnecessary downloads.  
-- **If a dependency is installed, it will NOT download or build it again.**  
-- **Any temporary build files, installers, and extracted archives are deleted immediately after updating or building.**  
-- **The full 6GB is only needed while the updater is running** and **only if you don't already have the dependencies installed.**  
-- **Once installation is complete, disk usage will return to normal. If and only if it was ever used at all, in the event binar exe's aren't available in the download. It's a very good triple-tupled redundant system for this type of repo updater specifically.**  
-
-⚠️ **Make sure you have enough disk space available before running the updater!**  
-
----
+🚀 **No need to manage repositories manually**—just run the updater and let it handle everything!
 
 ## 🛠️ How to Use
 
 ### **🔹 Quick Start (Recommended)**
-1. **Fork this repository** by clicking the **"Fork"** button in the upper right corner.
-2. **Clone your forked repository** into a **new directory** on your local machine:
-   ```sh
-   git clone https://github.com/YOUR-USERNAME/Cpp_Ultimate_Project_Updater.git
-   cd Cpp_Ultimate_Project_Updater
-   ```
+1. **Create a new directory where you want the updater to manage files.**  
+   - ⚠️ **DO NOT run the updater in an existing project directory.** It will manage its own files!
+2. **Download** `updater.exe` (Windows) or `updater` (Linux/macOS) from the **Releases** section ➜ _(On the right side of the GitHub page)_.
 3. **Run the updater**:
-   - **Windows**: Double-click `updater.exe` or run it from the command line:
-     ```sh
-     updater.exe
-     ```
+   - **Windows**: Double-click `updater.exe` or run it from the command line.
    - **Linux/macOS**: Open a terminal in the directory and run:
      ```sh
-     chmod +x updater
-     ./updater
+     chmod +x updater && ./updater
      ```
 4. The updater will **automatically fetch and manage all required project files** in the directory.
-5. **To get the latest updates**, simply pull changes from your forked repository:
-   ```sh
-   git pull origin main
-   ```
+5. **Run the updater again** in the same directory whenever you want to check for updates.
 
 ---
 
-## 🔄 Keeping Your Updater Synced with This Repository
+## 📦 Normal Repository Instructions
 
-Since your fork is **independent**, you’ll need to **manually sync it** with the latest changes from this repository.
+For developers who want to manually build and modify the project:
 
-### **🔹 Syncing with Upstream Updates**
-1. **Add this repository as an upstream remote**:
-   ```sh
-   git remote add upstream https://github.com/Autodidac/Cpp_Ultimate_Project_Updater.git
-   ```
-2. **Fetch the latest changes from the original repo**:
-   ```sh
-   git fetch upstream
-   ```
-3. **Merge upstream updates into your fork**:
-   ```sh
-   git merge upstream/main
-   ```
-4. **Push the updates to your GitHub fork**:
-   ```sh
-   git push origin main
-   ```
+### **🔹 Clone the Repository**
+```sh
+git clone https://github.com/Autodidac/Cpp_Ultimate_Project_Updater.git
+cd Cpp_Ultimate_Project_Updater
+```
 
----
-
-## 🔗 Releases & Downloads
-
-If you prefer, you can also get the latest updates by **pulling from GitHub Releases**.
-
-For support or bug reports, open an **[issue](https://github.com/Autodidac/Cpp_Ultimate_Project_Updater/issues)**.
-
----
-
-## 🛠️ Building from Source
-
-### **🔹 Prerequisites**
-The updater will **automatically download and install**:
-- **LLVM+Clang** (either a standalone binary installer or built from source)
-- **7-Zip** (used for extraction)
-- **Ninja** (for fast builds)
-- **The updater source code and binaries**
-
-However, if you prefer to build manually, ensure you have:
-- **Windows:** Microsoft Visual Studio with CMake
-- **Linux/macOS:** Clang/GCC with CMake and Ninja
-
-### **🔹 Build Instructions**
+### **🔹 Building from Source**
 **Windows (MSVC + CMake)**
 ```sh
 mkdir build
@@ -153,33 +72,9 @@ updater.exe
 
 ---
 
-## 📜 License
+## 🔗 **Releases & Downloads**
+Get the latest version of `updater.exe` or `updater` from the **[Releases](https://github.com/Autodidac/Cpp_Ultimate_Project_Updater/releases)** section.
 
-This project is licensed under the **MIT License** – see the **[LICENSE](LICENSE)** file for details.
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! To contribute:
-1. **Fork the repository**
-2. **Create a feature branch**
-   ```sh
-   git checkout -b feature-branch
-   ```
-3. **Commit your changes**
-   ```sh
-   git commit -m "Added new feature"
-   ```
-4. **Push to your fork and open a Pull Request**
-   ```sh
-   git push origin feature-branch
-   ```
-
----
-
-## ⭐ Acknowledgments
-
-Special thanks to **Autodidac** for developing this centralized updater system.
+For support or bug reports, open an **[issue](https://github.com/Autodidac/Cpp_Ultimate_Project_Updater/issues)**.
 
 ---
