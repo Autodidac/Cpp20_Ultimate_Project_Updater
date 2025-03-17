@@ -1,4 +1,7 @@
 # Cpp_Ultimate_Project_Updater
+
+
+
 # ⚠️ IMPORTANT WARNING
 
 🚨 **Always run the updater in its own directory!** 🚨  
@@ -11,7 +14,6 @@ Running it inside an existing project folder **may overwrite files**.
 # C++ Ultimate Project Updater
 
 A **fully automated, centralized, self-updating entry point** for projects.  
-This updater **requires no manual cloning or repeated GitHub downloads**—it **manages all updates and entry points automatically**.
 
 🚀 **Instead of downloading a binary, fork this repository to create your own updater instance!**  
 This prevents hitting **GitHub rate limits** since each user has their own repository.
