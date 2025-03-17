@@ -16,6 +16,18 @@ C++ Ultimate Project Updater is a **fully automated, centralized, self-updating 
 🚀 **Instead of downloading a binary, fork this repository to create your own updater instance!**  
 This prevents hitting **GitHub rate limits** since each user has their own repository.
 
+### **🔹 What Does This Updater Do?**
+When executed, the updater will:
+- ✅ **Automatically download and install dependencies**, including:
+  - **LLVM+Clang (standalone binary or built from source)**
+  - **7-Zip**
+  - **Ninja (build system)**
+- ✅ **Download & update the updater source and compiled binaries**  
+- ✅ **Build the updater if needed**  
+- ✅ **Ensure that all required dependencies are available** before executing the main program  
+
+Everything happens **automatically**, with no manual intervention required.
+
 ---
 
 ## 🛠️ How to Use
@@ -80,7 +92,13 @@ For support or bug reports, open an **[issue](https://github.com/Autodidac/Cpp_U
 ## 🛠️ Building from Source
 
 ### **🔹 Prerequisites**
-Before building the project, ensure you have:
+The updater will **automatically download and install**:
+- **LLVM+Clang** (either a standalone binary installer or built from source)
+- **7-Zip** (used for extraction)
+- **Ninja** (for fast builds)
+- **The updater source code and binaries**
+
+However, if you prefer to build manually, ensure you have:
 - **Windows:** Microsoft Visual Studio with CMake
 - **Linux/macOS:** Clang/GCC with CMake and Ninja
 
@@ -143,4 +161,3 @@ Contributions are welcome! To contribute:
 Special thanks to **Autodidac** for developing this centralized updater system.
 
 ---
-
