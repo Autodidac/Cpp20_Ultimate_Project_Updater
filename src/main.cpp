@@ -10,7 +10,7 @@ namespace urls {
     const std::string github_raw_base = "https://raw.githubusercontent.com/"; // raw base github url, for source downloads
 
     const std::string owner = "Autodidac/"; // github project developer username for url 
-    const std::string repo = "Cpp_Ultimate_Project_Updater"; // whatever your github project name is
+    const std::string repo = "Cpp20_Ultimate_Project_Updater"; // whatever your github project name is
     const std::string branch = "main/"; // incase you need a different branch than githubs default branch main 
 
     // It's now using this internal file to fetch update versions internally without version.txt file that can be modified

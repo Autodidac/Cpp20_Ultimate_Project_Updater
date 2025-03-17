@@ -45,9 +45,8 @@ bin/*
 backup/
 app1/
 
-updater.exe
 *.ninja_log
-
+ninja.zip
 
 *.pdb
 *.idb
