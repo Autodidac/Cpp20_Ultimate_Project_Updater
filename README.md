@@ -1,22 +1,22 @@
 # Cpp_Ultimate_Project_Updater
 
-
-
-# ⚠️ IMPORTANT WARNING
+## ⚠️ IMPORTANT WARNING
 
 🚨 **Always run the updater in its own directory!** 🚨  
 The updater **creates and modifies files in the directory where it runs**.  
 Running it inside an existing project folder **may overwrite files**.  
-**Recommended:** **Create a new directory where you want the updater to manage files.**
+**Recommended:** **Create a new directory where you want the updater to manage files.**  
 
 ---
 
-# C++ Ultimate Project Updater
+## 🌟 About
 
-A **fully automated, centralized, self-updating entry point** for projects.  
+C++ Ultimate Project Updater is a **fully automated, centralized, self-updating entry point** for projects.  
 
 🚀 **Instead of downloading a binary, fork this repository to create your own updater instance!**  
 This prevents hitting **GitHub rate limits** since each user has their own repository.
+
+---
 
 ## 🛠️ How to Use
 
@@ -28,10 +28,14 @@ This prevents hitting **GitHub rate limits** since each user has their own repos
    cd Cpp_Ultimate_Project_Updater
    ```
 3. **Run the updater**:
-   - **Windows**: Double-click `updater.exe` or run it from the command line.
+   - **Windows**: Double-click `updater.exe` or run it from the command line:
+     ```sh
+     updater.exe
+     ```
    - **Linux/macOS**: Open a terminal in the directory and run:
      ```sh
-     chmod +x updater && ./updater
+     chmod +x updater
+     ./updater
      ```
 4. The updater will **automatically fetch and manage all required project files** in the directory.
 5. **To get the latest updates**, simply pull changes from your forked repository:
@@ -41,7 +45,7 @@ This prevents hitting **GitHub rate limits** since each user has their own repos
 
 ---
 
-## 📦 Keeping Your Updater Synced with This Repository
+## 🔄 Keeping Your Updater Synced with This Repository
 
 Since your fork is **independent**, you’ll need to **manually sync it** with the latest changes from this repository.
 
@@ -65,10 +69,78 @@ Since your fork is **independent**, you’ll need to **manually sync it** with t
 
 ---
 
-## 🔗 **Releases & Downloads**
+## 🔗 Releases & Downloads
+
 If you prefer, you can also get the latest updates by **pulling from GitHub Releases**.
 
 For support or bug reports, open an **[issue](https://github.com/Autodidac/Cpp_Ultimate_Project_Updater/issues)**.
+
+---
+
+## 🛠️ Building from Source
+
+### **🔹 Prerequisites**
+Before building the project, ensure you have:
+- **Windows:** Microsoft Visual Studio with CMake
+- **Linux/macOS:** Clang/GCC with CMake and Ninja
+
+### **🔹 Build Instructions**
+**Windows (MSVC + CMake)**
+```sh
+mkdir build
+cd build
+cmake .. -G "Visual Studio 17 2022"
+cmake --build . --config Release
+```
+
+**Linux/macOS (Clang/GCC + Ninja)**
+```sh
+mkdir build
+cd build
+cmake .. -G Ninja
+ninja
+```
+
+### **🔹 Running the Updater from Source**
+After building, run:
+```sh
+./updater
+```
+or on Windows:
+```sh
+updater.exe
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** – see the **[LICENSE](LICENSE)** file for details.
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! To contribute:
+1. **Fork the repository**
+2. **Create a feature branch**
+   ```sh
+   git checkout -b feature-branch
+   ```
+3. **Commit your changes**
+   ```sh
+   git commit -m "Added new feature"
+   ```
+4. **Push to your fork and open a Pull Request**
+   ```sh
+   git push origin feature-branch
+   ```
+
+---
+
+## ⭐ Acknowledgments
+
+Special thanks to **Autodidac** for developing this centralized updater system.
 
 ---
 
