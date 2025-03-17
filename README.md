@@ -1,71 +1,72 @@
-26 hours + [![wakatime](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template.svg)](https://wakatime.com/badge/github/Autodidac/Cpp20_Ultimate_Project_Template)
+# Cpp_Ultimate_Project_Updater
+# ⚠️ IMPORTANT WARNING
 
-# Cpp20_Ultimate_Project_Template
-The Ultimate Hello World - Cross Platform, Multi Editor Enabled Application/Library Project Template For C++20
-Contains scripts and build systems to build with virtually any Compiler on any IDE, Code Editor, or Terminal
+🚨 **Always run the updater in its own directory!** 🚨  
+The updater **creates and modifies files in the directory where it runs**.  
+Running it inside an existing project folder **may overwrite files**.  
+**Recommended:** **Create a new directory where you want the updater to manage files.**
 
+---
 
-## NOTICE : You'll want to immediately change the license info upon use of this template repo, make it your own you have permission, thank you! I just don't want anything coming back on me otherwise it's already probably mostly public domain anyways, enjoy!
-all that I ask is that you DO change the license to your own name or company, pseudonym.. so that you make it your OWN template, and a simple acknowledgement is appreciated, take care! 
+# C++ Ultimate Project Updater
 
+A **fully automated, centralized, self-updating entry point** for projects.  
+This updater **requires no manual cloning or repeated GitHub downloads**—it **manages all updates and entry points automatically**.
 
+🚀 **Instead of downloading a binary, fork this repository to create your own updater instance!**  
+This prevents hitting **GitHub rate limits** since each user has their own repository.
 
-## Multiplatform Build System
-Including CMake, vscode, msvc, builds.
+## 🛠️ How to Use
 
+### **🔹 Quick Start (Recommended)**
+1. **Fork this repository** by clicking the **"Fork"** button in the upper right corner.
+2. **Clone your forked repository** into a **new directory** on your local machine:
+   ```sh
+   git clone https://github.com/YOUR-USERNAME/Cpp_Ultimate_Project_Updater.git
+   cd Cpp_Ultimate_Project_Updater
+   ```
+3. **Run the updater**:
+   - **Windows**: Double-click `updater.exe` or run it from the command line.
+   - **Linux/macOS**: Open a terminal in the directory and run:
+     ```sh
+     chmod +x updater && ./updater
+     ```
+4. The updater will **automatically fetch and manage all required project files** in the directory.
+5. **To get the latest updates**, simply pull changes from your forked repository:
+   ```sh
+   git pull origin main
+   ```
 
+---
 
+## 📦 Keeping Your Updater Synced with This Repository
 
+Since your fork is **independent**, you’ll need to **manually sync it** with the latest changes from this repository.
 
-### On Windows
+### **🔹 Syncing with Upstream Updates**
+1. **Add this repository as an upstream remote**:
+   ```sh
+   git remote add upstream https://github.com/Autodidac/Cpp_Ultimate_Project_Updater.git
+   ```
+2. **Fetch the latest changes from the original repo**:
+   ```sh
+   git fetch upstream
+   ```
+3. **Merge upstream updates into your fork**:
+   ```sh
+   git merge upstream/main
+   ```
+4. **Push the updates to your GitHub fork**:
+   ```sh
+   git push origin main
+   ```
 
-You'll need to set this in console for vcpkg manifest, it's required for cmake
-```batch
-$env:VCPKG_ROOT="C:\path\to\vcpkg"
-$env:PATH="$env:VCPKG_ROOT;$env:PATH"
-```
+---
 
+## 🔗 **Releases & Downloads**
+If you prefer, you can also get the latest updates by **pulling from GitHub Releases**.
 
+For support or bug reports, open an **[issue](https://github.com/Autodidac/Cpp_Ultimate_Project_Updater/issues)**.
 
+---
 
-#### With MSVC - Microsoft Visual C/C++ Studio 2022 Community
-
-Project.sln - Solution File in the Main Directory
-
-
-
-#### With VSCode
-tasks.json
-
-all builds seem to now be working, report anything if you find it. you can use gcc and clang from tasks or the cmake build in vscode and variants 
-
-
-### On Linux
-
-
-
-
-#### With VSCode or VSCodium on Linux!
-Uses a CMake Build system, but you can also run tasks.json task, or build buttons at the bottom of the CMake Extension
-Or Build And Run From Command-Line Terminal below!
-
-
-
-
-#### Built-in Fully Autonomous Build Scripts - Install VulkanSDK, Dependencies, and Compile Directly from Commandline in Linux Terminal
-you will need to chmod -x the following to use:
-
-```bash
-./build.sh gcc Release
-./install.sh gcc Release
-./run.sh
-```
-
-or:
-
-```bash
-./build.sh clang Debug
-./install.sh clang Debug
-```
-
-Notice Above: the difference in compiler in the Debug, and Release builds, clang vs gcc, which ever compiler you prefer to use.
