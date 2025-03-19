@@ -86,7 +86,7 @@
       },
       "environment": {
         "VCPKG_ROOT": "C:/Users/me/source/repos/vcpkg",
-        "VCPKG_ROOT": "C:/Users/me/source/repos/Cpp20_Ultimate_Repo_Template_2025/bin/x64-release/vcpkg_installed"
+        "VCPKG_ROOT": "./bin/x64-release/vcpkg_installed"
       },
       "condition": {
         "type": "equals",

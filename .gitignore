@@ -44,6 +44,10 @@ bin/*
 .vs/
 backup/
 app1/
+/updater/Cpp20_Ultimate_Project_Updater/
+Cpp20_Ultimate_Project_Updater.exe
+update.exe
+
 
 *.ninja_log
 ninja.zip

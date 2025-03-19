@@ -23,7 +23,7 @@ namespace config {
     }
 
     // Internals
-    inline std::string SOURCE_MAIN_FILE() { return "src/main.cpp"; }  // 📂 Dynamic Main Source File
+    inline std::string SOURCE_MAIN_FILE() { return "src/update.cpp"; }  // 📂 Dynamic Main Source File
     inline std::string REPLACE_RUNNING_EXE_SCRIPT_NAME() { return "replace_updater.bat"; }
 
     // 🌐 **GitHub Base URLs**
@@ -33,7 +33,7 @@ namespace config {
     // 🔧 **Project URLs**
     inline std::string PROJECT_VERSION_URL() { return GITHUB_RAW_BASE() + OWNER + "/" + REPO + "/" + BRANCH + "/include/config.hpp"; }
     inline std::string PROJECT_SOURCE_URL() { return GITHUB_BASE() + OWNER + "/" + REPO + "/archive/refs/heads/" + BRANCH + ".zip"; }
-    inline std::string PROJECT_BINARY_URL() { return GITHUB_BASE() + OWNER + "/" + REPO + "/releases/latest/download/updater.exe"; }
+    inline std::string PROJECT_BINARY_URL() { return GITHUB_BASE() + OWNER + "/" + REPO + "/releases/latest/download/update.exe"; }
 
     // 🔢 **LLVM Configuration**
     inline std::string LLVM_VERSION = "20.1.0"; // Change to match the desired LLVM version
