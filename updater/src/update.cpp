@@ -1,46 +1,26 @@
-﻿#include "config.hpp"
+﻿
 #include "update.hpp"
 
-#include <cstdlib>
-#include <filesystem>
-#include <iostream>
-
+// this basically just leaves ninja.zip when commented out, but will be configured better in the future
 #define LEAVE_NO_FILES_ALWAYS_REDOWNLOAD
 
-// Configuration overrides
+// configuration overrides 
 namespace urls {
-    const std::string github_base = "https://github.com/";
-    const std::string github_raw_base = "https://raw.githubusercontent.com/";
+    const std::string github_base = "https://github.com/"; // base github url
+    const std::string github_raw_base = "https://raw.githubusercontent.com/"; // raw base github url, for source downloads
 
-    const std::string owner = "Autodidac/";
-    const std::string repo = "Cpp20_Ultimate_Project_Updater";
-    const std::string branch = "main/";
+    const std::string owner = "Autodidac/"; // github project developer username for url 
+    const std::string repo = "Cpp_Ultimate_Project_Updater"; // whatever your github project name is
+    const std::string branch = "main/"; // incase you need a different branch than githubs default branch main 
 
+    // It's now using this internal file to fetch update versions internally without version.txt file that can be modified
     const std::string version_url = github_raw_base + owner + repo + "/" + branch + "/include/config.hpp";
-    const std::string binary_url = github_base + owner + repo + "/releases/latest/download/updater";
-}
-
-// ✅ **Platform-independent execution function**
-void launch_executable(const std::string& executable) {
-    if (!std::filesystem::exists(executable)) {
-        std::cerr << "[ERROR] Executable not found: " << executable << "\n";
-        return;
-    }
-
-#if defined(_WIN32)
-    std::cout << "[INFO] Launching: " << executable << "\n";
-    system(("start \"\" \"" + executable + "\"").c_str());
-#elif defined(__APPLE__) || defined(__linux__)
-    std::cout << "[INFO] Setting executable permissions: " << executable << "\n";
-    system(("chmod +x \"" + executable + "\"").c_str());
-    std::cout << "[INFO] Running: " << executable << "\n";
-    system(("\"" + executable + "\" &").c_str()); // Runs in the background
-#else
-    std::cerr << "[ERROR] Unsupported OS. Cannot launch executable.\n";
-#endif
+    //const std::string source_url = github_base + owner + repo + "/archive/refs/heads/main.zip";
+    const std::string binary_url = github_base + owner + repo + "/releases/latest/download/updater.exe";
 }
 
 int main() {
+    // 🔄 **Cleanup Restart Script on Restart & Old Files on Update**
 #ifdef LEAVE_NO_FILES_ALWAYS_REDOWNLOAD
 #if defined(_WIN32)
     system("del /F /Q replace_updater.bat >nul 2>&1");
@@ -50,13 +30,12 @@ int main() {
 #endif
 #endif
 
-    bool updated = check_for_updates(urls::version_url);
-
-    if (updated) {
-        std::cout << "[INFO] New version available! Updating...\n";
+    if (check_for_updates(urls::version_url)) {
+        std::cout << "[INFO] New version available!\n";
         update_project(urls::version_url, urls::binary_url);
     }
     else {
+        // Clear console before showing "No updates available."
 #if defined(_WIN32)
         system("cls");
 #else
@@ -64,8 +43,6 @@ int main() {
 #endif
         std::cout << "[INFO] No updates available.\n";
     }
-
-    /// Your Source Runs Here, later on this will include a callback to internal automated cross platform entrypoint
 
     return 0;
 }

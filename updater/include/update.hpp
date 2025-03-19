@@ -1,12 +1,13 @@
 ﻿#pragma once
 
-#include "config.hpp"
 #include "build_system.hpp"
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <regex>
+#include "config.hpp"
+
 #include <cstdlib>
+#include <fstream>
+#include <iostream>
+#include <regex>
+#include <string>
 
 // 🔄 **Replace binary with the new compiled version**
 inline void replace_binary_from_script(const std::string& new_binary) {
